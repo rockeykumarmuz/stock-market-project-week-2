@@ -1,4 +1,4 @@
-import type { Stock, Trade } from '../types/stockType';
+import type { Position, Stock, Trade } from '../types/stockType';
  
 export const stocks: Stock[] = [
   { id: '1', symbol: 'AAPL', name: 'Apple Inc.',
@@ -25,4 +25,47 @@ export const trades: Trade[] = [
     quantity: 5,  price: 360.00, date: '2024-02-20' },
   { id: 't3', stockId: '4', symbol: 'TSLA', type: 'SELL',
     quantity: 8,  price: 265.00, date: '2024-03-10' },
+];
+
+export const positionData: Position[] = [
+  {
+    symbol: "AAPL",
+    quantity: 10,
+    ltp: 192.45,
+    avgPrice: 185.20,
+    pnl: 72.50,
+    pnlPercent: 3.91
+  },
+  {
+    symbol: "TSLA",
+    quantity: 5,
+    ltp: 175.20,
+    avgPrice: 190.00,
+    pnl: -74.00,
+    pnlPercent: -7.79
+  },
+  {
+    symbol: "BTC/USD",
+    quantity: 0.5,
+    ltp: 63450.00,
+    avgPrice: 58200.00,
+    pnl: 2625.00,
+    pnlPercent: 9.02
+  },
+  {
+    symbol: "NVDA",
+    quantity: 15,
+    ltp: 875.30,
+    avgPrice: 450.00,
+    pnl: 6379.50,
+    pnlPercent: 94.51
+  },
+  {
+    symbol: "MSFT",
+    quantity: 8,
+    ltp: 415.10,
+    avgPrice: 420.50,
+    pnl: -43.20,
+    pnlPercent: -1.28
+  }
 ];
