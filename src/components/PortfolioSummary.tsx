@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import type { Stock } from '../types/stockType';
+import {dropDownData} from '../data/dropDownData'
  
 interface PortfolioState {
   holdings: Stock[];
@@ -59,10 +60,9 @@ const PortfolioSummary: React.FC<PortfolioSummaryProps> = ({ availableStocks }) 
       </p>
       <select value={selectedSector}
               onChange={e => setSelectedSector(e.target.value)}>
-        <option>All</option>
-        <option>Technology</option>
-        <option>Finance</option>
-        <option>Automotive</option>
+        {dropDownData.map((dropDownItem) => {
+          return <option key={dropDownItem.label}>{dropDownItem.value}</option>
+        })}
       </select>
       <ul>
         {filtered.map(s => (

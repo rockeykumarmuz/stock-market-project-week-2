@@ -6,6 +6,7 @@ import PortfolioSummary   from './components/PortfolioSummary';
 import SearchBar          from './components/SearchBar';
 import DataTable          from './components/DataTable';
 import TradeForm          from './components/TradeFrom';
+import PositionTable from './components/PositionTable';
  
 function App() {
   const [selectedStock, setSelectedStock] = useState<Stock | null>(null);
@@ -97,6 +98,8 @@ function App() {
           { key: 'date',     header: 'Date' },
         ]}
       />
+      <h2 style={{ color: '#1E40AF' }}>Position History</h2>
+      <PositionTable />
  
       {/* Utility Types */}
       <h2 style={{ color: '#1E40AF' }}>New Trade</h2>
