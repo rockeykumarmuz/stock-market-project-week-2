@@ -50,7 +50,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
       <button onClick={handleClear}>Clear</button>
       <select onChange={handleSectorChange}>
         {dropDownData.map((dropDownItem) => {
-          return <option value={dropDownItem.value}>{dropDownItem.label}</option>
+          return <option key={dropDownItem.value} value={dropDownItem.value}>{dropDownItem.label}</option>
         })}
       </select>
     </div>

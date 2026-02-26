@@ -7,6 +7,10 @@ import SearchBar          from './components/SearchBar';
 import DataTable          from './components/DataTable';
 import TradeForm          from './components/TradeFrom';
 import PositionTable from './components/PositionTable';
+import HoldingTable from './components/HoldingTable';
+import ShowPaginatedData from './components/ShowPaginatedData';
+import TradeFeature from './components/TradeFeature';
+import StockStream from './components/WebSocket';
  
 function App() {
   const [selectedStock, setSelectedStock] = useState<Stock | null>(null);
@@ -98,8 +102,21 @@ function App() {
           { key: 'date',     header: 'Date' },
         ]}
       />
+      
+      {/* Position Table */}
       <h2 style={{ color: '#1E40AF' }}>Position History</h2>
       <PositionTable />
+      
+      {/* Holding Table */}
+      <h2 style={{ color: '#1E40AF' }}>Holding Table</h2>
+      <HoldingTable />
+
+      {/* Pagination Table */}
+      <h2 style={{ color: '#1E40AF' }}>Table With Pagination</h2>
+      <ShowPaginatedData />
+
+       <h2 style={{ color: '#1E40AF' }}>Infinite Pagination Scroll</h2>
+      <TradeFeature onSubmitTrade={() => {}} stocks={stocks} tradeHistory={tradeHistory} selectedStock={stocks[0]} />
  
       {/* Utility Types */}
       <h2 style={{ color: '#1E40AF' }}>New Trade</h2>
@@ -108,6 +125,8 @@ function App() {
         onSubmitTrade={handleNewTrade}
         initialValues={selectedStock ?? {}}
       />
+
+      <StockStream />
     </div>
   );
 }
