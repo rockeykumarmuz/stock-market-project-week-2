@@ -8,6 +8,8 @@ export interface Stock {
   volume: number;
   marketCap: number;
   sector: string;
+  isAddedToCompare?: boolean
+  dayVolume?: string
 }
  
 export interface Trade {
@@ -42,4 +44,27 @@ export interface Column<T> {
   // This ensures 'value' matches the type of the specific property 'key'
   render?: <K extends keyof T>(value: T[K], row: T) => React.ReactNode;
   width?: number;
+}
+
+export interface Holding {
+  symbol: string;
+  qty: number;
+  investedValue: number;
+  currentValue: number;
+  totalReturn: number;
+}
+
+export interface MarketData {
+  symbol: string;
+  name: string;
+  price: number;
+  change: number;
+  changePercent: number;
+  volume: number;
+}
+
+export interface Column<T> {
+  header: string
+  key: keyof T
+  sortable?: boolean
 }

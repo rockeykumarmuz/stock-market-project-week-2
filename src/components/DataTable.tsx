@@ -14,6 +14,11 @@ interface DataTableProps<T extends object> {
   rowKey: keyof T;           // which field is the unique key
   onRowClick?: (row: T) => void;
   emptyMessage?: string;
+  onSort?: (key: keyof T) => void
+  sortConfig?: {
+    key: keyof T
+    direction: "asc" | "desc"
+  } | null
 }
  
 // 3️⃣  Generic component — note the <T extends object> on the arrow function
