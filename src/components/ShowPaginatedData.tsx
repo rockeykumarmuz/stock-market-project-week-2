@@ -9,9 +9,7 @@ const DATA_PER_PAGE = 5
  const columnsData: Column<MarketData>[] = [
     { header: "Symbol", key: "symbol" },
     { header: "Name", key: "name" },
-    { header: "Price", key: "price", render: () => {
-      return 
-    } },
+    { header: "Price", key: "price" },
     { header: "Change", key: "change" },
     { header: "Change %", key: "changePercent" },
     { header: "Volume", key: "volume" },

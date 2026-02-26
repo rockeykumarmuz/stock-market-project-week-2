@@ -1,6 +1,5 @@
 import React from 'react';
 import type { Stock } from '../types/stockType';
-import { useStockStore } from '../hooks/useStockStore';
  
 // 1️⃣  Define a Props interface
 interface StockCardProps {
@@ -16,13 +15,7 @@ const StockCard: React.FC<StockCardProps> = ({
   isSelected = false,
 }) => {
   const isPositive = stock.change >= 0;
-  const {compareList} = useStockStore()
 
-  const handleToggle = () => {
-    // need to add the stock to the stockList
-    // click again it shoud be removed
-    compareList: () => set(stock)
-  }
  
   return (
     <div
@@ -43,7 +36,7 @@ const StockCard: React.FC<StockCardProps> = ({
       </p>
       <div style={{display: 'flex', justifyContent: 'space-between'}}>
         <small>Sector: {stock.sector}</small> 
-        <button onClick={handleToggle}> + Compare </button>
+        <button> + Compare </button>
       </div>
     </div>
   );

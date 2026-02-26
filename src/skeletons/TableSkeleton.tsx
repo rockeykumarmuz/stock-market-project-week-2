@@ -18,7 +18,7 @@ const shimmerCSS = `
   }
 }`
 
-const TableSkeleton: React.FC<TableSkeletonProps> = ({rows = 5, cols = 4, title}) => {
+const TableSkeleton: React.FC<TableSkeletonProps> = ({ cols = 4, title}) => {
   return (
     <div style={{marginBottom: 24}}>
       <style>
