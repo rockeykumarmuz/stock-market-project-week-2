@@ -7,7 +7,7 @@ interface PaginationProps {
   handleNextPage: () => void
 }
 
-const Pagination: React.FC<PaginationProps> = ({pageIndex, totalPage, startIndex, endIndex, handleNextPage, handlePrevPage
+const Pagination: React.FC<PaginationProps> = ({pageIndex, totalPage, handleNextPage, handlePrevPage
 }) => {
 
   return (
